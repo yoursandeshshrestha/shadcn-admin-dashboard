@@ -1,10 +1,12 @@
 # Million Dollar Dashboard
 
-Admin Dashboard UI built with Next.js and shadcn/ui. Designed with responsiveness and modern aesthetics in mind.
-
 ![Dashboard Preview](public/Demo/demo-1.png)
 
+Admin Dashboard UI built with Next.js and shadcn/ui. Designed with responsiveness and modern aesthetics in mind.
+
 A clean, professional dashboard template I built for personal projects. Features a monochromatic color scheme inspired by modern admin interfaces, with multiple authentication layouts and a fully responsive design. While leveraging shadcn/ui components, I've added custom dashboard components and layouts optimized for real-world use.
+
+![Dashboard Preview](public/Demo/demo-2.png)
 
 > This is a template project ready to be customized for your needs.
 
