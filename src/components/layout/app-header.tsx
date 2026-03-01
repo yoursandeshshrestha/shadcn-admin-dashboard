@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { SidebarTrigger } from "@/components/ui/sidebar";
+import { useSidebar } from "@/contexts/SidebarContext";
 import { Search, Bell, Moon, Sun, Palette, Check, Type } from "lucide-react";
 import { useCommandPalette } from "@/stores/command-palette-store";
 import { useTheme } from "next-themes";
@@ -23,11 +24,91 @@ export function AppHeader() {
   const { theme, setTheme } = useTheme();
   const { colorTheme, setColorTheme } = useThemeColors();
   const { currentFont, setFont } = useFontStore();
+  const { toggleSidebar, isCollapsed } = useSidebar();
 
   return (
-    <header className="fixed top-0 left-0 right-0 lg:left-(--sidebar-width) z-50 flex h-14 sm:h-16 shrink-0 items-center gap-2 sm:gap-4 border-b bg-card px-3 sm:px-6">
-      <div className="block lg:hidden">
-        <SidebarTrigger />
+    <header className="flex h-14 sm:h-16 shrink-0 items-center gap-2 sm:gap-4 border-b bg-card px-3 sm:px-6">
+      {/* Sidebar Toggle */}
+      <div className="flex items-center">
+        <button
+          type="button"
+          onClick={toggleSidebar}
+          className="relative inline-flex shrink-0 items-center justify-center rounded-md border border-transparent bg-transparent hover:bg-accent text-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 size-9 cursor-pointer [&>svg]:size-5"
+          data-slot="sidebar-trigger"
+          data-sidebar="trigger"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="size-5">
+            <line
+              x1="18"
+              y1="4"
+              x2="18"
+              y2="28"
+              fill="none"
+              stroke="currentColor"
+              strokeMiterlimit="10"
+              strokeWidth="2"
+              data-color="color-2"
+              data-cap="butt"
+              strokeLinejoin="miter"
+              strokeLinecap="butt"
+            />
+            <rect
+              x="2"
+              y="4"
+              width="28"
+              height="24"
+              rx="3"
+              ry="3"
+              fill="none"
+              stroke="currentColor"
+              strokeMiterlimit="10"
+              strokeWidth="2"
+              strokeLinejoin="miter"
+              strokeLinecap="square"
+            />
+            <line
+              x1="22"
+              y1="11"
+              x2="26"
+              y2="11"
+              fill="none"
+              stroke="currentColor"
+              strokeMiterlimit="10"
+              strokeWidth="2"
+              data-color="color-2"
+              strokeLinejoin="miter"
+              strokeLinecap="square"
+            />
+            <line
+              x1="22"
+              y1="16"
+              x2="26"
+              y2="16"
+              fill="none"
+              stroke="currentColor"
+              strokeMiterlimit="10"
+              strokeWidth="2"
+              data-color="color-2"
+              strokeLinejoin="miter"
+              strokeLinecap="square"
+            />
+            <line
+              x1="22"
+              y1="21"
+              x2="26"
+              y2="21"
+              fill="none"
+              stroke="currentColor"
+              strokeMiterlimit="10"
+              strokeWidth="2"
+              data-color="color-2"
+              strokeLinejoin="miter"
+              strokeLinecap="square"
+            />
+          </svg>
+          <span className="sr-only">Toggle Sidebar</span>
+        </button>
+        <Separator orientation="vertical" className="ml-3 mr-2 h-8" />
       </div>
 
       {/* Search Bar */}

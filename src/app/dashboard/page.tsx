@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { SidebarProvider } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/contexts/SidebarContext";
 import { AppSidebar } from "@/components/layout/app-sidebar";
 import { AppHeader } from "@/components/layout/app-header";
 import { CommandPalette } from "@/components/features/command-palette";
@@ -236,15 +236,15 @@ export default function DashboardPage() {
 
   return (
     <SidebarProvider>
-      <div className="flex min-h-screen w-full bg-sidebar overflow-x-hidden">
-        <div className="hidden lg:block">
-          <AppSidebar />
-        </div>
+      <div className="flex h-screen w-full overflow-hidden bg-background">
+        {/* Sidebar */}
+        <AppSidebar />
 
-        <div className="flex flex-1 flex-col bg-background min-w-0 relative">
+        {/* Main Content */}
+        <div className="flex-1 flex flex-col overflow-hidden">
           <AppHeader />
 
-          <main className="flex-1 p-4 sm:p-6 overflow-x-hidden mt-14 sm:mt-16">
+          <main className="flex-1 p-4 sm:p-6 overflow-y-auto">
             <div className="space-y-4 sm:space-y-6 w-full max-w-full">
               {/* Page Header */}
               <div>
