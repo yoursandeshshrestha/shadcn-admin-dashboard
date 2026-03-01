@@ -1,50 +1,41 @@
 # Million Dollar Dashboard
 
-Modern admin dashboard template built with Next.js 15 and shadcn/ui. Clean monochromatic design with multiple authentication layouts.
+Admin Dashboard UI built with Next.js and shadcn/ui. Designed with responsiveness and modern aesthetics in mind.
 
-## Quick Start
+![Dashboard Preview](public/Demo/demo-1.png)
+
+A clean, professional dashboard template I built for personal projects. Features a monochromatic color scheme inspired by modern admin interfaces, with multiple authentication layouts and a fully responsive design. While leveraging shadcn/ui components, I've added custom dashboard components and layouts optimized for real-world use.
+
+> This is a template project ready to be customized for your needs.
+
+## Run Locally
+
+Clone the project
+
+```bash
+git clone https://github.com/yourusername/million-dollar-dashboard.git
+```
+
+Go to the project directory
+
+```bash
+cd million-dollar-dashboard
+```
+
+Install dependencies
 
 ```bash
 npm install
+```
+
+Start the development server
+
+```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
-
-## Features
-
-- **Dashboard** - Stats, charts, transactions table, revenue breakdown
-- **5 Auth Layouts** - Centered, simple, split gradient, card variants
-- **Theme System** - Light/dark mode with customizable color themes
-- **12 Font Options** - Plus Jakarta Sans (default), Inter, Geist, and more
-- **Command Palette** - Quick navigation with ⌘K
-- **Responsive** - Mobile-first design with fixed header and sidebar
-
-## Tech Stack
-
-- Next.js 15 (App Router)
-- TypeScript
-- Tailwind CSS 4
-- shadcn/ui
-- Recharts
-- TanStack Table
-
-## Project Structure
-
-```
-src/
-├── app/              # Routes and pages
-├── components/       # React components
-│   ├── dashboard/    # Dashboard-specific components
-│   ├── features/     # Feature components
-│   ├── layout/       # Header, sidebar
-│   ├── profile/      # User profile components
-│   └── ui/          # shadcn/ui components
-├── lib/             # Utilities and mock data
-├── stores/          # Zustand stores
-└── types/           # TypeScript types
-```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## License
 
-MIT
+Licensed under the [MIT License](https://choosealicense.com/licenses/mit/)
